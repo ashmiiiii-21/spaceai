@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AstraPlan</title>
+<meta name="description" content="AI-based intelligent space mission planning, launch vehicle selection and digital mission simulation.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<header class="top">
+  <div class="bar">
+    <div class="brand">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="7" fill="var(--accent)"/><ellipse cx="20" cy="20" rx="17" ry="7" fill="none" stroke="var(--cyan)" stroke-width="1.8" transform="rotate(-28 20 20)"/><circle cx="34.5" cy="12.2" r="2.6" fill="var(--fg)"/></svg>
+      <div><b>AstraPlan</b><span>AI-based intelligent space mission planning, launch vehicle selection & digital mission simulation</span></div>
+    </div>
+    <div class="ctrls">
+      <span class="chip" id="missionChip">—</span>
+      <button class="btn primary" id="runBtn">Run mission pipeline</button>
+      <button class="btn sm" id="themeBtn" aria-label="Switch theme">Theme</button>
+      <button class="btn sm" id="aboutBtn">About</button>
+    </div>
+  </div>
+  <nav class="steps" id="steps" aria-label="Pipeline stages"></nav>
+</header>
+<main id="main"></main>
+<div class="toast" id="toast" role="status"></div>
+<dialog id="about" style="border:1px solid var(--line);border-radius:16px;background:var(--surface);color:var(--fg);max-width:min(600px,92vw);padding:22px">
+  <h2 style="font-size:22px">AstraPlan</h2>
+  <p class="muted" style="margin:4px 0 12px">AI-based intelligent space mission planning, launch vehicle selection and digital mission simulation.</p>
+  <dl class="facts" style="grid-template-columns:auto 1fr;text-align:left">
+    <dt>Team</dt><dd style="text-align:left;font-family:var(--body)">Sathya Narayan · Ashmita P S · Pavithra Rajendran · Sreya Lekshmi</dd>
+    <dt>Guide</dt><dd style="text-align:left;font-family:var(--body)">Ms Aswathy T K</dd>
+    <dt>Base paper</dt><dd style="text-align:left;font-family:var(--body)">Pirayeshshirazinezhad et al., “Designing Monte Carlo Simulation and an Optimal Machine Learning to Optimize and Model Space Missions”, IEEE Access, 2022</dd>
+  </dl>
+  <p class="small muted" style="margin-top:12px">Everything runs in your browser. Physics: Hohmann transfers, plane changes, the rocket equation, an exponential atmosphere, J2 nodal drift, eclipse geometry and parametric mass, power and cost models. Launch vehicle figures are approximate public values for preliminary design, not quotes.</p>
+  <form method="dialog" style="margin-top:14px"><button class="btn primary">Close</button></form>
+</dialog>
+<script src="js/data.js"></script>
+<script src="js/physics.js"></script>
+<script src="js/engines.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
